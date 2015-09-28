@@ -5,7 +5,7 @@
 * Fork this repository and create a new Cloud9 project by cloning your fork
 * Each exercise should be done in a separate branch, **branched off of master**, with a descriptive name of your choice
 * Completed exercises should be submitted as pull requests. The pull request name should be "Exercise #: " followed by the exercise's title
-* All the exercises require the [`bluebird`](https://github.com/petkaantonov/bluebird/) NPM package. A `package.json` file is already initialized in this repo with this dependency. You'll have to do an `npm install` upon cloning in order to get all the dependencies.
+* All the exercises require the [`bluebird`](https://github.com/petkaantonov/bluebird/) NPM package. A **`package.json`** file is already initialized in this repo with this dependency. You'll have to do an `npm install` upon cloning in order to get all the dependencies.
 * Different exercises may also require different NPM packages. This will require you to use `npm install --save` to get these packages. The `package.json` should be part of the same commit where you start using the required package(s). For example, if one of the exercises requires the use of the [`request`](https://github.com/request/request) library, then the `package.json` for that submission should contain the dependency, and it should be committed at the same time as the `exercise-#.js` that `require`s it.
 * A **`boilerplate.js`** file is made available to you. It contains the base code to load and Promisify the MySQL library, make a first query, extract the rows as well as close the connection. You may keep this file in your different commits, and copy its content to get started fresh on a new exercise :)
 
