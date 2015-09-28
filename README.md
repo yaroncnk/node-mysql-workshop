@@ -1,5 +1,5 @@
 # NodeJS + MySQL with Promises workshop
-* This is our sequel to the databases and promises workshops :)*
+*This is our sequel to the databases and promises workshops :)*
 
 ## Basic instructions
 * Fork this repository and create a new Cloud9 project by cloning your fork
