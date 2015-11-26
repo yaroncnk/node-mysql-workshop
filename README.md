@@ -97,6 +97,8 @@ For this exercise you have **nothing to submit**. This is going to be useful for
 2. Find the account that corresponds to this email, and show the user a list of `firstName lastName` entries, listed in alphabetical order of last name.
 3. When the user chooses an entry, display a `cli-table` showing all the data for that entry.
 4. Then loop back to show them all the entries again.
+5. Hint #1: if a person (account) has multiple address books, we want to see all entries from all address books, no matter what.
+6. Hint #2: you will need to join a few tables together to get your result.
 
 ## Exercise 9: Challenge with pagination
 1. This exercise builds up on Exercise #8.
