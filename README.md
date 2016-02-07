@@ -117,5 +117,12 @@ For this challenge, you will link up your address book project with MySQL:
   2. All the data ("source of truth") will be in your MySQL database, as tables
   3. When you choose "Create", the app will ask you all the same info, but at the end will put it in the table structure account/addressbook/entry/emails+addresses+phones.
   4. When someone does a search, do the search using a MySQL query instead
-  6. When somemone deletes an entry, delete it from MySQL
+  5. When somemone deletes an entry, delete it from MySQL
   6. All the rest of the application stays the same
+
+## Slack Bot challenge
+If you worked on the Slack Bot workshop, do the following challenge. For this one, we will make the bot keep track of how many messages each user sends per channel. At the end of the day we want to be able to produce a report with the top messengers per channel and per day/week/month. Weeks start on Monday and months start on the 1st of the month.
+
+For this challenge, you will have to create the data schema yourself in MySQL, create the bot code that will compile the message counts and put them in MySQL, as well as create a separate NodeJS command-line app that does the reporting.
+
+Have fun :)
