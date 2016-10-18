@@ -43,7 +43,7 @@ Before starting the exercises, import the file called `data.sql` in MySQL. This 
   --no address books--
 ```
 
-## Exercise 6: Joining up the data, part 2
+## CHALLENGE: Joining up the data, part 2
 1. Write a program that fetches all accounts, their addressbooks, and entries.
 2. Hint #1: you will have two `JOIN`s in your query.
 3. Hint #2: you will need to use `AS` to give each column a unique name
@@ -81,48 +81,3 @@ Before starting the exercises, import the file called `data.sql` in MySQL. This 
   }
 ]
 ```
-
-## Exercise 7: Joining up the data, part 3
-1. This exercise expands on #6. Here we want to get all accounts with all address books, all entries, AND all emails/phones/addresses
-2. We want to get an array of accounts as the output
-3. The only difference is that each entry will now contain arrays for `emails`, `phones` and `addresses`, basically one more level of nesting
-
-## Exercise 8: Mixing it up a bit
-1. Using `inquirer`, `prompt` or a similar library, ask the user for their email address and use it as a "login" to the address book system in the following way.
-2. Find the account that corresponds to this email, and show the user a list of `firstName lastName` entries, listed in alphabetical order of last name.
-3. When the user chooses an entry, display a `cli-table` showing all the data for that entry.
-4. Then loop back to show them all the entries again.
-5. Hint #1: if a person (account) has multiple address books, we want to see all entries from all address books, no matter what.
-6. Hint #2: you will need to join a few tables together to get your result.
-
-## Exercise 9: Challenge with pagination
-1. This exercise builds up on Exercise #8.
-2. The only difference is, when showing the list of entries, we will show them 5 by 5.
-3. Below the list of 5 entries, we will have two extra options for "Previous Page" and "Next Page"
-4. These options should only be enabled if there is a previous/next page
-5. Selecting one of them should show the appropriate entries
-6. The rest of the program works the same way
-
-## Exercise 10: Challenge with text search
-1. This exercise builds up on Exercise #8. **It does NOT require Exercise #9**, but can go well with it :)
-2. The only difference is, in addition to the list of entries, the user will have a choice to "Search entries"
-3. Choosing "search entries" will make the program ask for an input search
-4. Following the search, the program should show only the entries that match the search
-5. Matching the search means: firstName contains search term OR lastName contains search term OR any email address contains search term OR any address line1/city/state/country match the search term.
-6. The rest of the program works the same way
-
-## MEGA CHALLENGE: Connecting the address book project
-For this challenge, you will link up your address book project with MySQL:
-  1. Your app will NOT be holding the full address book data as an array anymore!
-  2. All the data ("source of truth") will be in your MySQL database, as tables
-  3. When you choose "Create", the app will ask you all the same info, but at the end will put it in the table structure account/addressbook/entry/emails+addresses+phones.
-  4. When someone does a search, do the search using a MySQL query instead
-  5. When somemone deletes an entry, delete it from MySQL
-  6. All the rest of the application stays the same
-
-## Slack Bot challenge
-If you worked on the Slack Bot workshop, do the following challenge. For this one, we will make the bot keep track of how many messages each user sends per channel. At the end of the day we want to be able to produce a report with the top messengers per channel and per day/week/month. Weeks start on Monday and months start on the 1st of the month.
-
-For this challenge, you will have to create the data schema yourself in MySQL, create the bot code that will compile the message counts and put them in MySQL, as well as create a separate NodeJS command-line app that does the reporting.
-
-Have fun :)
