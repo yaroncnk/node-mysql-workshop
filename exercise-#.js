@@ -28,17 +28,55 @@
 // });
 
 //ex. 2
-var mysql = require('mysql');
-var table = require('cli-table');
+// var mysql = require('mysql');
+// var table = require('cli-table');
 
+// var connection = mysql.createConnection({
+//     host: process.env.IP,
+//     user: process.env.C9_USER,
+//     password: '',
+//     database: 'addressbook'
+// });
+
+// connection.query("SELECT id, email FROM Account LIMIT 5", function(err, rows, fields) {
+//     if (err) {
+//         return err;
+//     }
+//     else {
+        
+//         console.log(rows);
+//         rows.forEach(function(row) {
+    
+//                 console.log('#' + row.id + ': ' + row.email);
+//         });
+
+//     }
+//     connection.end();
+// });
+
+// //ex. 2
+// var mysql = require('mysql');
+// var table = require('cli-table');
+
+// var connection = mysql.createConnection({
+//     host: process.env.IP,
+//     user: process.env.C9_USER,
+//     password: '',
+//     database: 'addressbook'
+// });
+
+var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: process.env.IP,
     user: process.env.C9_USER,
     password: '',
     database: 'addressbook'
 });
-
-connection.query("SELECT id, email FROM Account LIMIT 5", function(err, rows, fields) {
+connection.query(`SELECT
+    Account.id, Account.email , AddressBook.name
+        FROM
+    Account JOIN AddressBook On (Account.id=AddressBook.AccountId)`, 
+    function(err, rows, fields) {
     if (err) {
         return err;
     }
@@ -47,7 +85,7 @@ connection.query("SELECT id, email FROM Account LIMIT 5", function(err, rows, fi
         console.log(rows);
         rows.forEach(function(row) {
     
-                console.log('#' + row.id + ': ' + row.email);
+                console.log('#' + row.id + ': ' + row.email + ' ' + row.name);
         });
 
     }
