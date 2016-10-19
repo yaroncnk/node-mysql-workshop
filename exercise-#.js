@@ -65,6 +65,35 @@
 //     database: 'addressbook'
 // });
 
+//Ex. 3
+// var mysql = require('mysql');
+// var connection = mysql.createConnection({
+//     host: process.env.IP,
+//     user: process.env.C9_USER,
+//     password: '',
+//     database: 'addressbook'
+// });
+// connection.query(`SELECT
+//     Account.id, Account.email , AddressBook.name
+//         FROM
+//     Account JOIN AddressBook On (Account.id=AddressBook.AccountId)`, 
+//     function(err, rows, fields) {
+//     if (err) {
+//         return err;
+//     }
+//     else {
+        
+//         console.log(rows);
+//         rows.forEach(function(row) {
+    
+//                 console.log('#' + row.id + ': ' + row.email + ' ' + row.name);
+//         });
+
+//     }
+//     connection.end();
+// });
+
+//Ex. 4
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: process.env.IP,
@@ -75,17 +104,21 @@ var connection = mysql.createConnection({
 connection.query(`SELECT
     Account.id, Account.email , AddressBook.name
         FROM
-    Account JOIN AddressBook On (Account.id=AddressBook.AccountId)`, 
+    Account LEFT JOIN AddressBook On (Account.id=AddressBook.AccountId)`, 
     function(err, rows, fields) {
     if (err) {
         return err;
     }
     else {
         
-        console.log(rows);
+        
         rows.forEach(function(row) {
-    
+                if (row.name != null) {
                 console.log('#' + row.id + ': ' + row.email + ' ' + row.name);
+                }
+                else {
+                console.log('#' + row.id + ': ' + row.email + ' --no address books--');    
+                }
         });
 
     }
